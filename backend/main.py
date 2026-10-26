@@ -64,10 +64,7 @@ def get_friend(name: str):
     if len(matches) > 1:
         return {
             "status": "ambiguous",
-            "message": (
-                "Which Mike? Guinness-beer-loving Mike Wyse "
-                "or cottage-loving Mike Cerilli?"
-            ),
+            "message": "Multiple matching profiles found. Please clarify.",
             "options": [friend["name"] for friend in matches]
         }
 
