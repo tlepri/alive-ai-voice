@@ -1,0 +1,39 @@
+# Private friend information
+backend/data/*.json
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# Secrets
+.env
+.env.*
+!.env.example
+
+# Local databases
+*.db
+*.sqlite3
+
+# Environment secrets
+.env
+.env.*
+
+# Terraform local files and state
+**/.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+*.tfvars.json
+*.tfplan
+crash.log
+crash.*.log
+
+# Python
+__pycache__/
+*.pyc
+
+# Private friend profiles
+backend/data/*.json
+.venv-lambda/
+build/
