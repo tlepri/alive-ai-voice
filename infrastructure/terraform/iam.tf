@@ -1,3 +1,5 @@
+data "aws_caller_identity" "current" {}
+
 resource "aws_iam_role" "mia_lambda" {
   name_prefix = "alive-ai-voice-lambda-"
 
@@ -45,7 +47,7 @@ resource "aws_iam_role_policy" "mia_secret_read" {
     Statement = [{
       Effect   = "Allow"
       Action   = ["secretsmanager:GetSecretValue"]
-      Resource = "arn:aws:secretsmanager:us-east-1:730345078180:secret:alive-ai-voice/mia-api-key-??????"
+      Resource = "arn:aws:secretsmanager:us-east-1:${data.aws_caller_identity.current.account_id}:secret:alive-ai-voice/mia-api-key-??????"
     }]
   })
 }
